@@ -1,0 +1,29 @@
+@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
+
+*{
+    font-family: 'Patrick Hand SC', cursive;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons{
+    display: inline;
+}
+
+.btn{
+    margin: 5px
+}
+
+.header {
+    padding: 0px;
+    height: 150px;
+    width: 100%;
+    text-align: center;
+    background:#a2c1fa;
+    color: white;
+    font-size: 30px;
+  }

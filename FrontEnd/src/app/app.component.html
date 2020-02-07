@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="header">
+    <h1>Guess the object!</h1>
+  </div>
+
+  <input style="display: none" type="file" accept="image/*" (change)="onFileChanged($event)" #fileInput>
+  <div *ngIf="imageNotDownloaded; then UploadBlock else DeleteBlock"></div>
+  <ng-template #UploadBlock>
+    <button class="btn" mat-raised-button color="accent" (click)="fileInput.click()">Select a photo!</button>
+    <!-- <button mat-raised-button color="primary" (click)="onUpload()">Guess!</button> -->
+  </ng-template>
+  <ng-template #DeleteBlock>
+    <div class="buttons">
+      <button class="btn" mat-raised-button color="accent" (click)="fileInput.click()">Change File</button>
+      <button class="btn" mat-raised-button color="primary" (click)="onDelete()">Delete</button>
+    </div>
+    <div *ngIf="previewUrl">
+      <img [src]="previewUrl" width="400px" height="400px">
+    </div>
+    <p>The object is: {{GuessedObject}}</p>
+  </ng-template>
+</div>
